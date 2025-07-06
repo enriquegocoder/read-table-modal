@@ -10,6 +10,8 @@ export const ModalForm = ({ closeModal, onSubmit, defaultValue }) => {
         status: "live",
     });
 
+    console.log('defaultValue', defaultValue);
+
     const [errors, setErrors] = useState('');
 
     const validateForm = () => {
@@ -66,7 +68,7 @@ export const ModalForm = ({ closeModal, onSubmit, defaultValue }) => {
                     <button onClick={cancel}>X</button>
                 </div>
                 <div className="title">
-                    <h5>Agrege una nueva pagina</h5>
+                    {defaultValue ? <h5>Editando pagina</h5> : <h5>Agregar pagina</h5>}
                 </div>
                 <div className="body">
                     <div className='form-group'>
@@ -89,7 +91,7 @@ export const ModalForm = ({ closeModal, onSubmit, defaultValue }) => {
                 </div>
                 <div className="footer">
                     <button id="cancelBtn" onClick={cancel}>Cancel</button>
-                    <button type="submit" onClick={handleSubmit}>Continue</button>
+                    <button type="submit" onClick={handleSubmit}>Save</button>
                 </div>
                 {/* </form> */}
             </div>

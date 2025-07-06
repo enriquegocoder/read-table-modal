@@ -29,8 +29,10 @@ function App() {
 
 
   const handleDeleteRow = (targetIndex) => {
-
-    setRows(rows.filter((_, idx) => idx !== targetIndex));
+     console.log('targetIndex: ', rows[targetIndex].page)
+     if (window.confirm(`Are you sure you want to delete: ${rows[targetIndex].page}?`)) {
+      setRows(rows.filter((_, idx) => idx !== targetIndex))
+    }
 
   }
 
