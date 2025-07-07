@@ -71,3 +71,7 @@
 .delete-btn {
   color: #e10d05;
 }
+
+.novisible {
+  display: none;
+}
